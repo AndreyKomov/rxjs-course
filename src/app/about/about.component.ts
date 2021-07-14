@@ -26,7 +26,11 @@ import {createHttpObservable} from '../common/util';
 export class AboutComponent implements OnInit {
 
     ngOnInit() {
-
+      const sourse1$ = of(1, 2, 3);
+      const sourse2$ = of(4, 5, 6);
+      const sourse3$ = of(7, 8, 9);
+      const result$ = concat(sourse1$, sourse2$, sourse3$);
+      result$.subscribe(val => console.log(val));
 
     }
 
